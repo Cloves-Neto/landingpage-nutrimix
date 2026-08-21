@@ -40,12 +40,20 @@
             scroll-behavior: smooth;
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
             position: relative;
         }
 
@@ -1897,8 +1905,13 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+                max-width: 100vw;
+            }
             .hero-title {
-                font-size: 36px;
+                font-size: 34px;
+                word-break: break-word;
             }
             .hero-ctas {
                 flex-direction: column;
@@ -1908,9 +1921,39 @@
             .hero-ctas .btn {
                 width: 100%;
             }
+            .showcase-wrapper {
+                width: 100%;
+                overflow: hidden;
+            }
             .showcase-img-holder {
-                height: 300px;
-                max-width: 300px;
+                height: 270px;
+                max-width: 250px;
+                width: 100%;
+            }
+            .showcase-badge.badge-1 {
+                left: 0 !important;
+                top: -10px !important;
+                padding: 5px 10px !important;
+                font-size: 10.5px !important;
+                max-width: calc(100% - 10px) !important;
+            }
+            .showcase-badge.badge-2 {
+                right: 0 !important;
+                top: 90px !important;
+                padding: 5px 10px !important;
+                font-size: 10.5px !important;
+                max-width: calc(100% - 10px) !important;
+            }
+            .showcase-badge.badge-3 {
+                left: 0 !important;
+                bottom: -20px !important;
+                width: auto !important;
+                max-width: calc(100% - 10px) !important;
+                padding: 6px 10px !important;
+                font-size: 10.5px !important;
+            }
+            .bio-badge {
+                right: 0 !important;
             }
             .agendamento-card {
                 padding: 24px 16px;
@@ -1919,11 +1962,96 @@
                 padding: 20px 16px;
             }
             .header-cta {
-                padding: 8px 16px;
-                font-size: 13px;
+                padding: 6px 12px;
+                font-size: 12px;
             }
             .logo-text {
-                font-size: 22px;
+                font-size: 20px;
+            }
+        }
+
+        /* Dedicated Extra-Small Mobile (XSM: <= 380px) Viewport Fixes */
+        @media (max-width: 380px) {
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            .container {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .logo-text {
+                font-size: 16px !important;
+            }
+            .header-cta {
+                padding: 5px 9px !important;
+                font-size: 11px !important;
+            }
+            .header-actions {
+                gap: 4px !important;
+            }
+            .menu-toggle {
+                width: 36px !important;
+                height: 36px !important;
+            }
+            .hero-title {
+                font-size: 28px !important;
+                line-height: 1.1 !important;
+            }
+            .hero-subtitle {
+                font-size: 13.5px !important;
+            }
+            .section-title {
+                font-size: 22px !important;
+            }
+            .section-kicker {
+                font-size: 10px !important;
+                letter-spacing: 0.5px !important;
+            }
+            .showcase-img-holder {
+                height: 240px !important;
+                max-width: 220px !important;
+            }
+            .showcase-badge.badge-1,
+            .showcase-badge.badge-2,
+            .showcase-badge.badge-3 {
+                font-size: 9.5px !important;
+                padding: 4px 8px !important;
+            }
+            .badge-icon {
+                width: 26px !important;
+                height: 26px !important;
+                font-size: 11px !important;
+            }
+            .focus-card, .service-card, .pillar-card, .testimonial-card, .agendamento-card {
+                padding: 18px 12px !important;
+            }
+            .btn {
+                padding: 10px 14px !important;
+                font-size: 12px !important;
+                width: 100% !important;
+            }
+            .circle-ui {
+                gap: 8px !important;
+            }
+            .graph-ui-bars {
+                gap: 3px !important;
+            }
+            .graph-arch-wrapper {
+                width: 20px !important;
+                height: 44px !important;
+            }
+            .bio-stats-bar {
+                gap: 12px !important;
+            }
+            .bio-stat-num {
+                font-size: 22px !important;
+            }
+            .bio-stat-label {
+                font-size: 11px !important;
             }
         }
 
@@ -2908,71 +3036,102 @@
                 if (target) cardsObserver.observe(target);
             });
 
-            // Initialize JS Sliding Carousels with Auto-Play for tablet and mobile
-            function initCarousel(containerId, trackClass, cardClass, dotsId) {
+            // Initialize JS Sliding Carousels with Auto-Play (Only active on mobile/tablet screen sizes)
+            function initCarousel(containerId, trackClass, cardClass, dotsId, maxMobileWidth = 768) {
                 const container = document.getElementById(containerId);
                 if (!container) return;
                 const track = container.querySelector('.' + trackClass);
+                if (!track) return;
                 const cards = track.querySelectorAll('.' + cardClass);
                 const dotsContainer = document.getElementById(dotsId);
-                if (!dotsContainer) return;
                 
                 let currentIndex = 0;
                 const totalCards = cards.length;
-                
-                // Create dots
-                dotsContainer.innerHTML = '';
-                for (let i = 0; i < totalCards; i++) {
-                    const dot = document.createElement('div');
-                    dot.className = 'dot' + (i === 0 ? ' active' : '');
-                    dot.addEventListener('click', () => {
-                        goToSlide(i);
-                        resetAutoPlay();
-                    });
-                    dotsContainer.appendChild(dot);
+                let autoPlayTimer = null;
+
+                function isCarouselActive() {
+                    return window.innerWidth <= maxMobileWidth;
                 }
-                
-                const dots = dotsContainer.querySelectorAll('.dot');
-                
+
+                function createDots() {
+                    if (!dotsContainer) return;
+                    dotsContainer.innerHTML = '';
+                    if (!isCarouselActive()) return;
+                    for (let i = 0; i < totalCards; i++) {
+                        const dot = document.createElement('div');
+                        dot.className = 'dot' + (i === 0 ? ' active' : '');
+                        dot.addEventListener('click', () => {
+                            goToSlide(i);
+                            resetAutoPlay();
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
                 function goToSlide(index) {
+                    if (!isCarouselActive()) {
+                        track.style.transform = '';
+                        return;
+                    }
                     currentIndex = (index + totalCards) % totalCards;
                     const slideWidth = container.clientWidth;
                     track.style.transform = `translate3d(${-currentIndex * slideWidth}px, 0, 0)`;
                     
-                    dots.forEach((dot, idx) => {
-                        dot.classList.toggle('active', idx === currentIndex);
-                    });
+                    if (dotsContainer) {
+                        const dots = dotsContainer.querySelectorAll('.dot');
+                        dots.forEach((dot, idx) => {
+                            dot.classList.toggle('active', idx === currentIndex);
+                        });
+                    }
                 }
 
-                // Handle screen resize
-                window.addEventListener('resize', () => {
-                    goToSlide(currentIndex);
-                });
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    if (isCarouselActive()) {
+                        autoPlayTimer = setInterval(() => {
+                            goToSlide(currentIndex + 1);
+                        }, 3500);
+                    }
+                }
 
-                // Automatic infinite sliding loop every 3.5 seconds
-                let autoPlayTimer = setInterval(() => {
-                    goToSlide(currentIndex + 1);
-                }, 3500);
+                function stopAutoPlay() {
+                    if (autoPlayTimer) {
+                        clearInterval(autoPlayTimer);
+                        autoPlayTimer = null;
+                    }
+                }
 
                 function resetAutoPlay() {
-                    clearInterval(autoPlayTimer);
-                    autoPlayTimer = setInterval(() => {
-                        goToSlide(currentIndex + 1);
-                    }, 3500);
+                    stopAutoPlay();
+                    startAutoPlay();
                 }
-                
+
+                function updateState() {
+                    if (isCarouselActive()) {
+                        createDots();
+                        goToSlide(currentIndex);
+                        startAutoPlay();
+                    } else {
+                        stopAutoPlay();
+                        track.style.transform = '';
+                        if (dotsContainer) dotsContainer.innerHTML = '';
+                        currentIndex = 0;
+                    }
+                }
+
                 // Touch Swipe gesture support
                 let startX = 0;
                 let isDragging = false;
                 
                 track.addEventListener('touchstart', (e) => {
+                    if (!isCarouselActive()) return;
                     startX = e.touches[0].clientX;
                     isDragging = true;
-                    clearInterval(autoPlayTimer);
+                    stopAutoPlay();
                 }, { passive: true });
                 
                 track.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
+                    if (!isDragging || !isCarouselActive()) return;
                     const diff = e.touches[0].clientX - startX;
                     if (diff < -50) {
                         goToSlide(currentIndex + 1);
@@ -2984,14 +3143,23 @@
                 }, { passive: true });
                 
                 track.addEventListener('touchend', () => {
+                    if (!isCarouselActive()) return;
                     isDragging = false;
                     resetAutoPlay();
                 });
+
+                // Handle screen resize
+                window.addEventListener('resize', () => {
+                    updateState();
+                });
+
+                // Initial setup
+                updateState();
             }
 
             // Init mobile/tablet carousels on DOMContentLoaded
-            initCarousel('pillars-carousel', 'pillars-grid', 'pillar-card', 'pillars-dots');
-            initCarousel('services-carousel', 'services-grid', 'service-card', 'services-dots');
+            initCarousel('pillars-carousel', 'pillars-grid', 'pillar-card', 'pillars-dots', 991);
+            initCarousel('services-carousel', 'services-grid', 'service-card', 'services-dots', 768);
 
             // 1. Emagrecimento: Animate Bars (Handled natively via CSS transitions on scaleY)
             function animateWeightLoss(card) {
