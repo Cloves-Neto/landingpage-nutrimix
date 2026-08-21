@@ -1,0 +1,3064 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Cristiane de Brito - Nutricionista Personalizada & Integrativa</title>
+    <meta name="description" content="Nutricionista na Zona Sul de São Paulo - SP. Atendimento individualizado de alta performance com mais de 10 anos de experiência.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --bg-alt: #f4f7f6; /* Soft sage white */
+            --primary: #0a4c2c; /* Forest Green */
+            --primary-light: #126b42;
+            --accent: #c6ff00; /* Neon Lime */
+            --accent-hover: #b2e600;
+            --text-color: #0f1d15; /* Deep Green-Black */
+            --text-muted: #4e5f55; /* Muted Sage-Gray */
+            --text-light: #768a80;
+            --border-color: rgba(10, 76, 44, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 10px 30px rgba(10, 76, 44, 0.04);
+            --card-shadow-hover: 0 15px 40px rgba(10, 76, 44, 0.08);
+            --font-head: 'Oswald', sans-serif;
+            --font-sub: 'Outfit', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Grid Deco */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(10, 76, 44, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 76, 44, 0.015) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glowing Orbs for Light Mode */
+        .glowing-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb-1 {
+            top: 5%;
+            right: -10%;
+            width: 450px;
+            height: 450px;
+            background-color: var(--accent);
+        }
+
+        .orb-2 {
+            top: 45%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background-color: var(--primary);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-alt);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd8d0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Buttons & Badges */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: var(--font-sub);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(198, 255, 0, 0.15);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 255, 0, 0.25);
+        }
+
+        .btn-primary svg {
+            fill: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid rgba(10, 76, 44, 0.2);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(10, 76, 44, 0.03);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline svg {
+            fill: var(--primary);
+        }
+
+        /* Card Styles */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .premium-card:hover {
+            border-color: rgba(10, 76, 44, 0.2);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(10, 76, 44, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Apple Logo Recreated in SVG */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: var(--font-head);
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        /* Mobile Hamburger trigger */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: 58px;
+            line-height: 1.05;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            color: transparent;
+            -webkit-text-stroke: 1px var(--primary);
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 36px;
+            max-width: 580px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-social-proof {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 32px;
+        }
+
+        .proof-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proof-num {
+            font-family: var(--font-head);
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .proof-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Showcase (Right Column) */
+        .showcase-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .main-showcase-card {
+            width: 100%;
+            max-width: 440px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 16px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(10, 76, 44, 0.06);
+            /* Important to let floating badges lay on top without clipping */
+            overflow: visible; 
+            z-index: 1;
+        }
+
+        .showcase-img-holder {
+            width: 100%;
+            height: 480px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--bg-alt);
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.95;
+        }
+
+        /* Floating Showcase Badges */
+        .showcase-badge {
+            position: absolute;
+            padding: 14px 20px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(10, 76, 44, 0.08);
+            z-index: 10; /* Put on top of everything */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .badge-1 {
+            top: 40px;
+            left: -40px;
+            background: #ffffff;
+            border: 1.5px solid var(--accent);
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            top: 290px; /* Shifted down to prevent overlapping patient face */
+            right: -30px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            animation-delay: 2s;
+        }
+
+        .badge-3 {
+            bottom: 40px;
+            left: -20px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            animation-delay: 4s;
+            width: 220px;
+        }
+
+        .badge-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: rgba(10, 76, 44, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .badge-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .badge-title {
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .badge-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .mini-graph {
+            width: 100%;
+            height: 40px;
+            margin-top: 8px;
+        }
+
+        /* Section Global Settings */
+        section {
+            padding: 90px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+
+        .section-kicker {
+            color: var(--primary);
+            background-color: rgba(198, 255, 0, 0.35);
+            border: 1px solid var(--accent);
+            padding: 5px 14px;
+            border-radius: 50px;
+            display: inline-block;
+            font-family: var(--font-sub);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Pillars / Diferenciais Section */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            padding: 40px 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pillar-card:hover {
+            border-color: var(--accent);
+        }
+
+        .pillar-num {
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            background-color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .pillar-title {
+            font-family: var(--font-sub);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .pillar-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Focus Area / Metas Estruturadas */
+        .focus-section {
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Grid layout modified: 3x1 (2 top row, 1 full-width bottom row) */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .focus-card {
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 360px;
+        }
+
+        /* Third card spans full 100% width */
+        .focus-card.full-width {
+            grid-column: span 2;
+            min-height: 260px;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .focus-card.full-width .focus-top {
+            flex: 1.2;
+        }
+        .focus-card.full-width .card-ui {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        .focus-top h3 {
+            font-family: var(--font-sub);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .focus-top p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .focus-card.full-width .focus-top p {
+            margin-bottom: 0;
+        }
+
+        .card-ui {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 20px;
+            margin-top: auto;
+            box-shadow: 0 4px 15px rgba(10, 76, 44, 0.01);
+        }
+
+        /* Animated Bar Chart UI */
+        .graph-ui-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 100px;
+            gap: 12px;
+        }
+
+        .graph-bar-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .graph-arch-wrapper {
+            width: 32px;
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #card-emagrecimento.animated .graph-arch-wrapper {
+            transform: scaleY(1);
+        }
+
+        .graph-arch-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-bar-label {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* Circular Progress UI */
+        .circle-ui {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circle-svg-wrap {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .circle-svg-wrap svg {
+            transform: rotate(-90deg);
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: var(--bg-alt);
+            stroke-width: 8;
+        }
+
+        .circle-progress {
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 8;
+            stroke-dasharray: 220;
+            stroke-dashoffset: 220; /* Default empty offset */
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .circle-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-head);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .circle-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .circle-val {
+            font-family: var(--font-head);
+            font-size: 26px;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .circle-lbl {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Stats List UI with Slide-in rows */
+        .stats-ui-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .stats-ui-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--bg-alt);
+            padding-bottom: 8px;
+            /* Default slide-in states */
+            transform: translateX(40px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stats-ui-row.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .stats-ui-row:last-child {
+            border: 0;
+            padding: 0;
+        }
+
+        .stats-lbl {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .stats-val {
+            font-family: var(--font-head);
+            font-size: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            min-width: 90px;
+            justify-content: flex-end;
+        }
+
+        /* Bio / Sobre Section */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bio-image-wrapper {
+            position: relative;
+        }
+
+        .bio-img-container {
+            width: 100%;
+            height: 520px;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+        }
+
+        .bio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bio-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--accent);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 16px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            box-shadow: 0 10px 30px rgba(198, 255, 0, 0.35);
+        }
+
+        .bio-badge-title {
+            font-family: var(--font-head);
+            font-size: 26px;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .bio-badge-desc {
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .bio-text h3 {
+            font-family: var(--font-sub);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .bio-paragraph {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bio-toggle-btn {
+            background: none;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            font-family: var(--font-sub);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .bio-toggle-btn:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Stats bar inside biography */
+        .bio-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 36px;
+            padding-top: 28px;
+        }
+
+        .bio-stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bio-stat-num {
+            font-family: var(--font-head);
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .bio-stat-label {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background-color: var(--accent);
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            box-shadow: 0 4px 14px rgba(198, 255, 0, 0.35);
+        }
+
+        .service-num {
+            font-size: 13px;
+            color: var(--text-light);
+            font-family: var(--font-sub);
+        }
+
+        .service-body h3 {
+            font-family: var(--font-sub);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-body p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-family: var(--font-sub);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--text-muted);
+            transform: translateX(4px);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            color: #ffb800;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            color: var(--text-muted);
+            font-size: 14.5px;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--bg-alt);
+            padding-top: 20px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-family: var(--font-sub);
+            font-weight: 800;
+            font-size: 15px;
+            border: 1.5px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(198, 255, 0, 0.3);
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .author-meta {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* FAQ and Map Grid */
+        .contact-faq-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+            background-color: #ffffff;
+            box-shadow: 0 8px 24px rgba(10, 76, 44, 0.06);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-sub);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        .faq-trigger {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: var(--bg-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-trigger {
+            background-color: var(--accent); /* Lime green */
+            color: var(--primary);
+            transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(198, 255, 0, 0.4);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 20px;
+            transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+        }
+
+        /* Map and Contact Details */
+        .map-card {
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            box-shadow: var(--card-shadow);
+        }
+
+        .map-iframe-container {
+            width: 100%;
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            border: 1px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(198, 255, 0, 0.35);
+        }
+
+        .contact-info-text h4 {
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .contact-info-text p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Agendamento & Form Section */
+        .agendamento-section {
+            padding: 90px 0;
+            position: relative;
+            background-color: var(--bg-color);
+        }
+
+        .agendamento-card {
+            padding: 48px;
+            border-radius: 28px;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            box-shadow: 0 20px 50px rgba(10, 76, 44, 0.05);
+        }
+
+        .agendamento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .agendamento-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-sub);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .benefit-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(198, 255, 0, 0.25);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .agendamento-form-wrapper {
+            background-color: var(--bg-alt);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-family: var(--font-sub);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            color: var(--primary);
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 14px 16px 14px 46px;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            background-color: #ffffff;
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230a4c2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            cursor: pointer;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(10, 76, 44, 0.08);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020f09;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            color: #cbd8d0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo-text {
+            color: #ffffff;
+        }
+
+        .footer-brand p {
+            color: #768a80;
+            font-size: 14px;
+            margin-top: 16px;
+            max-width: 320px;
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .footer-social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(198, 255, 0, 0.12);
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+        }
+
+        .footer-social-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 6px 20px rgba(198, 255, 0, 0.4);
+        }
+
+        .footer-title {
+            font-family: var(--font-sub);
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #768a80;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-crn {
+            font-size: 13px;
+            color: #768a80;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            font-size: 13.5px;
+            color: #768a80;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .attribution {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dev-link {
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--accent);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .dev-link:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+            text-shadow: 0 0 8px rgba(198, 255, 0, 0.5);
+        }
+
+        /* Slide-out Navigation Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 85vw;
+            max-width: 320px;
+            height: 100%;
+            height: 100vh;
+            height: 100dvh;
+            background: #ffffff;
+            z-index: 100000;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
+            padding: 20px 20px 24px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            transform: translate3d(100%, 0, 0);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-drawer.open {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .drawer-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(10, 76, 44, 0.06);
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .drawer-close:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 14px 0;
+            flex-shrink: 0;
+        }
+
+        .drawer-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-family: var(--font-sub);
+            font-size: 15px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .drawer-nav-item svg {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .drawer-nav-item:hover, .drawer-nav-item:active {
+            background-color: rgba(198, 255, 0, 0.35);
+            color: var(--primary);
+        }
+
+        .drawer-footer {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        /* Backdrop overlay for menu drawer */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            background: rgba(10, 30, 20, 0.65);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+
+        body.drawer-open {
+            overflow: hidden !important;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent); /* Lime green */
+            color: var(--primary); /* Forest green */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(198, 255, 0, 0.2);
+            border: 2px solid var(--accent);
+            z-index: 99;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(198, 255, 0, 0.35);
+        }
+
+        .whatsapp-float svg {
+            fill: var(--primary);
+            width: 28px;
+            height: 28px;
+        }
+
+        /* JS Carousel Globals */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-dots {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(10, 76, 44, 0.15);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* Disable hover transform/shadow on mobile for touch accessibility */
+        @media (hover: none), (max-width: 768px) {
+            .premium-card:hover, .glass-card:hover, .pillar-card:hover, .service-card:hover, .btn:hover, .showcase-badge:hover, .focus-card:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 1024px) {
+            header {
+                padding: 12px 0;
+            }
+            header nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: rgba(10, 76, 44, 0.05);
+            }
+            .hero {
+                padding: 115px 0 50px;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                text-align: center;
+            }
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-ctas {
+                justify-content: center;
+                width: 100%;
+            }
+            .showcase-wrapper {
+                margin-top: 10px;
+            }
+
+            /* Tablet: Grid 2x2 for Specializations */
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Tablet/Mobile: JS Carousel Track and Card Sizing */
+            .pillars-grid.carousel-track {
+                display: flex !important;
+                width: 100% !important;
+                gap: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            .pillars-grid.carousel-track .pillar-card {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+            }
+            #pillars-dots {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 100px 0 40px;
+            }
+            .hero-title {
+                font-size: 42px;
+                line-height: 1.08;
+            }
+            .hero-subtitle {
+                font-size: 15.5px;
+                margin-bottom: 24px;
+            }
+            .hero-ctas .btn {
+                padding: 10px 20px;
+                font-size: 13.5px;
+            }
+            /* Stats hidden on mobile */
+            .hero-social-proof {
+                display: none !important;
+            }
+            .showcase-wrapper {
+                position: relative;
+                margin-top: 10px;
+                padding-bottom: 25px;
+            }
+            .showcase-img-holder {
+                height: 290px;
+                max-width: 280px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .showcase-badge.badge-1 {
+                display: flex !important;
+                position: absolute;
+                left: -10px;
+                top: -10px;
+                padding: 6px 12px;
+                border-radius: 14px;
+                background: #ffffff;
+                border: 1.5px solid var(--accent);
+                font-size: 11px;
+                z-index: 25;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            }
+            .showcase-badge.badge-2 {
+                display: flex !important;
+                position: absolute;
+                right: -10px;
+                top: 110px;
+                padding: 6px 12px;
+                border-radius: 14px;
+                background: #ffffff;
+                border: 1.5px solid var(--accent);
+                font-size: 11px;
+                z-index: 25;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            }
+            .showcase-badge.badge-3 {
+                display: flex !important;
+                position: absolute;
+                left: -10px;
+                bottom: -22px;
+                width: 210px;
+                padding: 8px 12px;
+                border-radius: 16px;
+                background: #ffffff;
+                border: 1.5px solid var(--accent);
+                z-index: 25;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            }
+            .mini-graph {
+                height: 28px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .bio-section {
+                padding-bottom: 40px;
+            }
+            .bio-grid, .contact-faq-grid, .agendamento-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .bio-badge {
+                padding: 10px 16px;
+                bottom: -10px;
+                right: -5px;
+            }
+            .bio-badge-title {
+                font-size: 20px;
+            }
+            .bio-stats-bar {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+
+            /* Mobile Focus / Metas Cards Proportions */
+            .focus-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .focus-card {
+                padding: 24px 20px;
+                min-height: auto;
+                border: 1.5px solid var(--accent);
+                overflow: visible;
+            }
+            .focus-card.full-width {
+                grid-column: span 1;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 24px 20px;
+                min-height: auto;
+            }
+            .focus-card.full-width .card-ui {
+                margin-top: 16px;
+            }
+            .card-ui {
+                padding: 18px 16px;
+                overflow: visible;
+                background: rgba(10, 76, 44, 0.03);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+            }
+            .graph-ui-bars {
+                height: 85px;
+                gap: 8px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-around;
+            }
+            .graph-arch-wrapper {
+                width: 28px;
+                height: 60px;
+            }
+            .circle-ui {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                overflow: visible;
+            }
+            .circle-svg-wrap {
+                position: relative;
+                width: 76px;
+                height: 76px;
+                flex-shrink: 0;
+            }
+            .circle-svg-wrap svg {
+                width: 76px;
+                height: 76px;
+                overflow: visible;
+            }
+            .circle-val {
+                font-size: 24px;
+            }
+            .circle-text {
+                font-size: 16px;
+            }
+
+            /* Static Lime Border for Carousel Cards */
+            .pillar-card, .service-card {
+                border: 1.5px solid var(--accent) !important;
+            }
+
+            /* Mobile: JS Carousel for Specializations */
+            .services-grid.carousel-track {
+                display: flex !important;
+                width: 100% !important;
+                gap: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            .services-grid.carousel-track .service-card {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+            }
+            #services-dots {
+                display: flex;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            /* Mobile Drawer & Overlay */
+            .mobile-drawer {
+                width: 85vw;
+                max-width: 320px;
+                padding: 28px 20px;
+                z-index: 2000;
+            }
+            .drawer-overlay {
+                z-index: 1999;
+            }
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 52px;
+                height: 52px;
+            }
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            .hero-ctas {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+            }
+            .hero-ctas .btn {
+                width: 100%;
+            }
+            .showcase-img-holder {
+                height: 300px;
+                max-width: 300px;
+            }
+            .agendamento-card {
+                padding: 24px 16px;
+            }
+            .agendamento-form-wrapper {
+                padding: 20px 16px;
+            }
+            .header-cta {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            .logo-text {
+                font-size: 22px;
+            }
+        }
+
+        /* Infinite Ticker Carousel */
+        .ticker-container {
+            overflow: hidden;
+            width: 100%;
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 22px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            width: max-content;
+            animation: ticker-scroll 30s linear infinite;
+            gap: 60px;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-sub);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .ticker-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(198, 255, 0, 0.4);
+        }
+
+        @keyframes ticker-scroll {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        /* Hover behavior to pause scrolling ticker */
+        .ticker-container:hover .ticker-wrapper {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Glowing Orbs Background -->
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo-container">
+                <!-- SVG apple outline official asset -->
+                <img src="assets/icon.svg" alt="Nutrimix Logo" width="34" height="34">
+                <span class="logo-text">NUTRIMIX</span>
+            </a>
+            
+            <nav>
+                <a href="#" class="active">Início</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#metodo">O Método</a>
+                <a href="#sobre">Dra. Cristiane</a>
+                <a href="#servicos">Tratamentos</a>
+                <a href="#agendamento">Agendamento</a>
+                <a href="#faq">FAQ & Localização</a>
+            </nav>
+            
+            <!-- Header Actions Group -->
+            <div class="header-actions">
+                <!-- Compacted CTA button -->
+                <a href="#agendamento" class="btn btn-primary header-cta">
+                    AGENDAR
+                </a>
+                
+                <!-- Mobile Menu Toggle Button -->
+                <button class="menu-toggle" onclick="toggleDrawer()">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Menu Drawer (Tablet/Mobile) -->
+    <div class="drawer-overlay" id="overlay" onclick="toggleDrawer()"></div>
+    <div class="mobile-drawer" id="drawer">
+        <div class="drawer-header">
+            <div class="logo-container">
+                <img src="assets/icon.svg" alt="Nutrimix Logo" width="28" height="28">
+                <span class="logo-text" style="font-size: 20px;">NUTRIMIX</span>
+            </div>
+            <button class="drawer-close" onclick="toggleDrawer()" aria-label="Fechar menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="#" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Início
+            </a>
+            <a href="#diferenciais" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Diferenciais
+            </a>
+            <a href="#metodo" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                O Método
+            </a>
+            <a href="#sobre" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Dra. Cristiane
+            </a>
+            <a href="#servicos" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                Tratamentos
+            </a>
+            <a href="#agendamento" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Agendamento
+            </a>
+            <a href="#faq" onclick="toggleDrawer()" class="drawer-nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                FAQ & Localização
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <a href="https://wa.me/5511986185312?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20nutricional." target="_blank" onclick="toggleDrawer()" class="btn btn-primary" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.479 2.016 14.017.99 11.997.99 6.561.99 2.137 5.361 2.133 10.79c-.001 1.67.452 3.3 1.311 4.757l-.955 3.486 3.558-.929zm10.363-7.51c-.26-.13-1.536-.759-1.772-.844-.236-.086-.407-.13-.578.13-.17.26-.66.844-.81 1.013-.15.17-.3.19-.56.06-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.542-1.447-1.802-.152-.26-.016-.4.117-.53.12-.117.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.578-1.393-.791-1.905-.207-.5-.424-.43-.578-.438-.15-.008-.323-.008-.495-.008-.172 0-.452.064-.688.32-.236.256-.902.883-.902 2.15 0 1.267.923 2.49 1.05 2.66.128.17 1.817 2.775 4.402 3.894.615.266 1.094.425 1.468.544.618.196 1.18.168 1.625.101.496-.075 1.536-.627 1.752-1.233.217-.606.217-1.127.151-1.233-.065-.107-.236-.17-.496-.3z"/></svg>
+                AGENDAR CONSULTA
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <!-- Removed tag/pill as requested -->
+                    <h1 class="hero-title">
+                        Sua saúde merece<br>
+                        <span>resultados que</span><br>
+                        aparecem.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Acompanhamento individualizado e integrativo focado em emagrecimento definitivo, definição muscular e saúde intestinal. Conquiste sua melhor versão com exames de alta precisão e suporte ativo.
+                    </p>
+                    
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/5511986185312?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20nutricional." class="btn btn-primary" target="_blank">
+                            <!-- SVG WhatsApp Icon -->
+                            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.479 2.016 14.017.99 11.997.99 6.561.99 2.137 5.361 2.133 10.79c-.001 1.67.452 3.3 1.311 4.757l-.955 3.486 3.558-.929zm10.363-7.51c-.26-.13-1.536-.759-1.772-.844-.236-.086-.407-.13-.578.13-.17.26-.66.844-.81 1.013-.15.17-.3.19-.56.06-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.542-1.447-1.802-.152-.26-.016-.4.117-.53.12-.117.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.578-1.393-.791-1.905-.207-.5-.424-.43-.578-.438-.15-.008-.323-.008-.495-.008-.172 0-.452.064-.688.32-.236.256-.902.883-.902 2.15 0 1.267.923 2.49 1.05 2.66.128.17 1.817 2.775 4.402 3.894.615.266 1.094.425 1.468.544.618.196 1.18.168 1.625.101.496-.075 1.536-.627 1.752-1.233.217-.606.217-1.127.151-1.233-.065-.107-.236-.17-.496-.3z"/></svg>
+                            AGENDAR VIA WHATSAPP
+                        </a>
+                        <a href="#metodo" class="btn btn-outline">
+                            <!-- SVG Chevron Icon -->
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                            CONHECER MÉTODO
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social-proof">
+                        <div class="proof-item">
+                            <span class="proof-num">4.8 ★</span>
+                            <span class="proof-label">Nota no Google Maps</span>
+                        </div>
+                        <div class="proof-item">
+                            <!-- Adjusted to 1.5K+ as requested -->
+                            <span class="proof-num">1.5K+</span>
+                            <span class="proof-label">Pacientes Avaliados</span>
+                        </div>
+                        <div class="proof-item">
+                            <span class="proof-num">100%</span>
+                            <span class="proof-label">Individualizado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual Showcase with clinical consultation image -->
+                <div class="showcase-wrapper">
+                    <div class="main-showcase-card">
+                        <div class="showcase-img-holder">
+                            <!-- Consultation photo generated via IA -->
+                            <img src="assets/paciente_atendimento.jpg" alt="Consulta Clínica Nutrimix" class="showcase-img">
+                        </div>
+                        
+                        <!-- Floating Glassmorphic Badges (Proper z-index/overflow set) -->
+                        <div class="showcase-badge badge-1">
+                            <div class="badge-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div class="badge-content">
+                                <span class="badge-title">4.8 / 5.0</span>
+                                <span class="badge-desc">Avaliação excelente</span>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-badge badge-2">
+                            <div class="badge-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="badge-content">
+                                <span class="badge-title">Suporte WhatsApp</span>
+                                <span class="badge-desc">Respostas diárias</span>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-badge badge-3">
+                            <div class="badge-content" style="width: 100%;">
+                                <span class="badge-title">Composição Corporal</span>
+                                <span class="badge-desc">Evolução do Paciente</span>
+                                <svg class="mini-graph" viewBox="0 0 208 44" style="overflow: visible;">
+                                    <path d="M 4 38 Q 28 32 52 22 T 100 26 T 148 12 T 196 8" fill="none" stroke="var(--primary)" stroke-width="3.5" stroke-linecap="round" />
+                                    <circle cx="196" cy="8" r="4.5" fill="var(--primary)" />
+                                </svg>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section (JS sliding carousel on mobile/tablet) -->
+    <section id="diferenciais" class="pillars-section">
+        <div class="container">
+            <div class="carousel-container" id="pillars-carousel">
+                <div class="pillars-grid carousel-track">
+                    
+                    <!-- Pillar 1 -->
+                    <div class="glass-card pillar-card">
+                        <span class="pillar-num">01 / DIAGNÓSTICO</span>
+                        <h3 class="pillar-title">Nutrição Integrativa</h3>
+                        <p class="pillar-desc">Uma análise completa que vai além da comida: avaliamos seus exames de laboratório, qualidade do sono, níveis de estresse e hábitos diários para um diagnóstico assertivo.</p>
+                    </div>
+                    
+                    <!-- Pillar 2 -->
+                    <div class="glass-card pillar-card" style="border-color: rgba(10, 76, 44, 0.2);">
+                        <span class="pillar-num" style="color: var(--primary); opacity: 0.8;">02 / ANÁLISE CLÍNICA</span>
+                        <h3 class="pillar-title">Bioimpedância Inclusa</h3>
+                        <p class="pillar-desc">Medição científica da sua composição corporal. Mapeie exatamente sua quantidade de massa muscular, porcentagem de gordura e retenção de líquidos para ajustar o plano nutricional.</p>
+                    </div>
+                    
+                    <!-- Pillar 3 -->
+                    <div class="glass-card pillar-card">
+                        <span class="pillar-num">03 / CONTINUIDADE</span>
+                        <h3 class="pillar-title">Plano Alimentar Prático</h3>
+                        <p class="pillar-desc">Montagem de um planejamento alimentar ajustado à sua rotina real de trabalho e treinos. Sem receitas complexas ou ingredientes inacessíveis. Foco em adesão e constância.</p>
+                    </div>
+                    
+                </div>
+                <!-- Carousel Dots Navigation -->
+                <div class="carousel-dots" id="pillars-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus / Metas Estruturadas Section (Grid 3x1 on Desktop with scroll animations) -->
+    <section id="metodo" class="focus-section">
+        <div class="container">
+            
+            <div class="section-header" style="text-align: center; margin: 0 auto 60px;">
+                <span class="section-kicker">SUA EVOLUÇÃO PROGRAMADA</span>
+                <h2 class="section-title">TRANSFORME A SUA COMPOSIÇÃO CORPORAL COM MÁXIMA PRECISÃO</h2>
+                <p class="section-desc">Mapeamos as respostas metabólicas individuais do seu corpo para criar planejamentos alimentares eficientes que blindam seus resultados e aceleram sua evolução.</p>
+            </div>
+            
+            <!-- Focus grid set to 2 columns (cards 1, 2 on top, card 3 occupies span 2 at the bottom) -->
+            <div class="focus-grid">
+                
+                <!-- Focus Card 1 (Weight Loss - Animated Bar Chart UI) -->
+                <div class="premium-card focus-card" id="card-emagrecimento">
+                    <div class="focus-top">
+                        <h3 style="color: var(--primary);">Emagrecimento Estratégico</h3>
+                        <p>Redução percentual de gordura corporal de forma saudável, mantendo a saciedade e a massa magra.</p>
+                    </div>
+                    
+                    <!-- Simulated UI Bars (Arch outlines matching hand-drawn image) -->
+                    <div class="card-ui">
+                        <div class="graph-ui-bars">
+                            <div class="graph-bar-col">
+                                <div class="graph-arch-wrapper">
+                                    <svg class="graph-arch-svg" viewBox="0 0 40 100" style="overflow: visible;">
+                                        <path d="M 6 100 L 6 30 A 14 14 0 0 1 34 30 L 34 100" fill="none" stroke="#8bbc38" stroke-width="4" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <span class="graph-bar-label">Gordura</span>
+                            </div>
+                            <div class="graph-bar-col">
+                                <div class="graph-arch-wrapper">
+                                    <svg class="graph-arch-svg" viewBox="0 0 40 100" style="overflow: visible;">
+                                        <path d="M 6 100 L 6 50 A 14 14 0 0 1 34 50 L 34 100" fill="none" stroke="#0a4c2c" stroke-width="4" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <span class="graph-bar-label">Semana 4</span>
+                            </div>
+                            <div class="graph-bar-col">
+                                <div class="graph-arch-wrapper">
+                                    <svg class="graph-arch-svg" viewBox="0 0 40 100" style="overflow: visible;">
+                                        <path d="M 6 100 L 6 50 A 14 14 0 0 1 34 50 L 34 100" fill="none" stroke="#8bbc38" stroke-width="4" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <span class="graph-bar-label">Semana 8</span>
+                            </div>
+                            <div class="graph-bar-col">
+                                <div class="graph-arch-wrapper">
+                                    <svg class="graph-arch-svg" viewBox="0 0 40 100" style="overflow: visible;">
+                                        <path d="M 6 100 L 6 10 A 14 14 0 0 1 34 10 L 34 100" fill="none" stroke="#0a4c2c" stroke-width="4" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <span class="graph-bar-label">Meta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Focus Card 2 (Muscle Gain - Circle Progress & Number climbing UI) -->
+                <div class="premium-card focus-card" id="card-hipertrofia">
+                    <div class="focus-top">
+                        <h3>Hipertrofia & Definição</h3>
+                        <p>Ganho estruturado de massa muscular com ajuste fino de macros e cronograma de suplementação esportiva.</p>
+                    </div>
+                    
+                    <!-- Simulated Circle UI -->
+                    <div class="card-ui">
+                        <div class="circle-ui">
+                            <div class="circle-svg-wrap">
+                                <svg width="80" height="80" viewBox="0 0 80 80">
+                                    <circle class="circle-bg" cx="40" cy="40" r="34" />
+                                    <!-- Dashoffset animated to 66 (70% full) -->
+                                    <circle class="circle-progress" cx="40" cy="40" r="34" data-offset="66" />
+                                </svg>
+                                <span class="circle-text" id="circle-pct">0%</span>
+                            </div>
+                            <div class="circle-info">
+                                <span class="circle-val" id="muscle-num">+0.0kg</span>
+                                <span class="circle-lbl">Massa Magra</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Focus Card 3 (Gut Health - Spans 100% width on Desktop, typing UI) -->
+                <div class="premium-card focus-card full-width" id="card-vitalidade">
+                    <div class="focus-top">
+                        <h3>Saúde Intestinal e Vitalidade</h3>
+                        <p>Regulação digestiva e combate ao inchaço abdominal com foco na absorção de nutrientes e energia diária. Nosso acompanhamento ajuda a restabelecer o equilíbrio biológico do seu sistema gastrointestinal.</p>
+                    </div>
+                    
+                    <!-- Simulated Stats UI -->
+                    <div class="card-ui">
+                        <div class="stats-ui-list">
+                            <div class="stats-ui-row">
+                                <span class="stats-lbl">Disposição Diária</span>
+                                <span class="stats-val" data-type="+120% ↑"></span>
+                            </div>
+                            <div class="stats-ui-row">
+                                <span class="stats-lbl">Absorção Intestinal</span>
+                                <span class="stats-val" data-type="Excelente ✓"></span>
+                            </div>
+                            <div class="stats-ui-row">
+                                <span class="stats-lbl">Inflamação Corporal</span>
+                                <span class="stats-val" data-type="Reduzida ↓" style="color: var(--primary);"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://wa.me/5511986185312?text=Olá!%20Quero%20agendar%20uma%20consulta%20e%20iniciar%20minha%20transformação%20metabólica." class="btn btn-primary" target="_blank">
+                    INICIAR MINHA JORNADA
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Bio / Sobre Section -->
+    <section id="sobre" class="bio-section">
+        <div class="container">
+            <div class="bio-grid">
+                
+                <!-- Portrait -->
+                <div class="bio-image-wrapper">
+                    <div class="bio-img-container">
+                        <!-- Generated portrait image from user reference model -->
+                        <img src="assets/dra_cristiane_portrait.jpg" alt="Dra. Cristiane de Brito" class="bio-img">
+                    </div>
+                    <div class="bio-badge">
+                        <span class="bio-badge-title">CRN-3</span>
+                        <span class="bio-badge-desc">Registro Ativo</span>
+                    </div>
+                </div>
+                
+                <!-- Text -->
+                <div class="bio-text">
+                    <span class="section-kicker">QUEM CONDUZ SEU TRATAMENTO</span>
+                    <h2 class="section-title">Dra. Cristiane de Brito</h2>
+                    <h3>Sua parceira de saúde e performance na Zona Sul de SP.</h3>
+                    
+                    <!-- Bio paragraphs with Ver Mais toggle -->
+                    <p class="bio-paragraph">
+                        Com mais de 10 anos de experiência, a nutricionista na Zona Sul de São Paulo Cristiane de Brito se destaca pelo atendimento individualizado, focado na saúde, no bem-estar e na construção de hábitos alimentares saudáveis. Suas orientações são baseadas em evidências científicas e adaptadas às necessidades de cada paciente, com escuta ativa e empatia.
+                    </p>
+                    
+                    <div class="bio-more-content" id="bio-more" style="display: none;">
+                        <p class="bio-paragraph">
+                            Especialista em nutrição equilibrada, Cristiane oferece consultas nutricionais personalizadas, planejamento alimentar, dietas específicas e dicas práticas para quem busca qualidade de vida. Seu compromisso com a atualização constante — por meio de cursos e congressos — reforça sua atuação como referência entre as nutricionistas da Zona Sul de SP.
+                        </p>
+                        <p class="bio-paragraph">
+                            Com dedicação e sensibilidade, a profissional auxilia seus pacientes na conquista de resultados sustentáveis, promovendo saúde com prazer e equilíbrio.
+                        </p>
+                    </div>
+
+                    <button class="bio-toggle-btn" onclick="toggleBioText()" id="bio-btn">
+                        VER MAIS
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    
+                    <!-- Stats bar under biography -->
+                    <div class="bio-stats-bar">
+                        <div class="bio-stat-item">
+                            <span class="bio-stat-num">1.5K+</span>
+                            <span class="bio-stat-label">Pacientes</span>
+                        </div>
+                        <div class="bio-stat-item">
+                            <span class="bio-stat-num">20</span>
+                            <span class="bio-stat-label">Colaboradores</span>
+                        </div>
+                        <div class="bio-stat-item">
+                            <span class="bio-stat-num">+10</span>
+                            <span class="bio-stat-label">Anos Experiência</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Ticker Carousel -->
+    <div class="ticker-container">
+        <div class="ticker-wrapper">
+            <!-- Set 1 -->
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Funcional</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Clínica</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Esportiva</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Emagrecimento</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição e Saúde Intestinal</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Infantil</div>
+            
+            <!-- Set 2 (for infinite seamless scrolling) -->
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Funcional</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Clínica</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Esportiva</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Emagrecimento</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição e Saúde Intestinal</div>
+            <div class="ticker-item"><span class="ticker-icon">➔</span> Nutrição Infantil</div>
+        </div>
+    </div>
+
+    <!-- Services / Especializações (Tablet 2x2 grid, mobile carousel) -->
+    <section id="servicos" class="services-section" style="background-color: var(--bg-alt);">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-kicker">ÁREAS DE ESPECIALIZAÇÃO</span>
+                <h2 class="section-title">Soluções Completas para Seus Objetivos</h2>
+                <p class="section-desc">Consultas nutricionais de excelência para quem busca emagrecimento inteligente, ganho muscular, melhor rendimento esportivo ou readequação metabólica.</p>
+            </div>
+            
+            <!-- Services Section Carousel Wrapper -->
+            <div class="carousel-container" id="services-carousel">
+                <div class="services-grid carousel-track">
+                    
+                    <!-- Service 1 -->
+                    <div class="premium-card service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                            <span class="service-num">01 / CLÍNICA</span>
+                        </div>
+                        <div class="service-body">
+                            <h3>Consulta Nutricional Personalizada</h3>
+                            <p>Avaliação do histórico clínico do paciente, adequação calórica e montagem imediata de cardápio exclusivo ajustado às suas intolerâncias e restrições. Inclui acompanhamento via WhatsApp em até 30 dias para adjustments rápidos.</p>
+                            <a href="https://wa.me/5511986185312?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20Consulta%20Nutricional%20Personalizada." class="service-link" target="_blank">SAIBER MAIS ↗</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="premium-card service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <span class="service-num">02 / TECNOLOGIA</span>
+                        </div>
+                        <div class="service-body">
+                            <h3>Avaliação por Bioimpedância</h3>
+                            <p>Mapeamento preciso da sua gordura corporal, massa muscular esquelética, taxa metabólica basal e água corporal total. A ferramenta ideal para rastrear mudanças na composição e embasar sua dieta.</p>
+                            <a href="https://wa.me/5511986185312?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20exame%20de%20Bioimpedância." class="service-link" target="_blank">SAIBER MAIS ↗</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="premium-card service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"></path></svg>
+                            </div>
+                            <span class="service-num">03 / ESPORTE</span>
+                        </div>
+                        <div class="service-body">
+                            <h3>Nutrição Esportiva & Performance</h3>
+                            <p>Estratégia alimentar focada em treinos de força ou corrida. Otimização de estoques de glicogênio, suplementação peri-treino e plano focado no ganho de massa, rendimento esportivo e recuperação acelerada.</p>
+                            <a href="https://wa.me/5511986185312?text=Olá!%20Quero%20saber%20mais%20sobre%20Nutrição%20Esportiva%20para%20melhorar%20meus%20treinos." class="service-link" target="_blank">SAIBER MAIS ↗</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="premium-card service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            </div>
+                            <span class="service-num">04 / INTEGRATIVA</span>
+                        </div>
+                        <div class="service-body">
+                            <h3>Saúde Intestinal & Intolerâncias</h3>
+                            <p>Tratamento clínico voltado para sintomas de constipação, gases, distensão abdominal e modulação da microbiota intestinal. Correção de disbiose para garantir absorção máxima de nutrientes e imunidade fortalecida.</p>
+                            <a href="https://wa.me/5511986185312?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20foco%20em%20Saúde%20Intestinal." class="service-link" target="_blank">SAIBER MAIS ↗</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Carousel Dots Navigation -->
+                <div class="carousel-dots" id="services-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Reviews from Google Maps) -->
+    <section class="testimonials-section">
+        <div class="container">
+            
+            <div class="section-header" style="text-align: center; margin: 0 auto 60px;">
+                <span class="section-kicker">PROVA SOCIAL REAL</span>
+                <h2 class="section-title">O que Dizem Nossos Pacientes</h2>
+                <p class="section-desc">Veja depoimentos e feedbacks reais de quem iniciou o tratamento e transformou o físico, a rotina alimentar e a disposição no dia a dia.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                
+                <!-- Testimonial 1 -->
+                <div class="glass-card testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "A consulta com a Cristiane foi transformadora. Ela me ouviu com atenção, analisou minha rotina e me passou um plano alimentar totalmente adaptado."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <span class="author-name">Marina Faria</span>
+                            <span class="author-meta">Paciente de Emagrecimento</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="glass-card testimonial-card" style="border-color: rgba(10, 76, 44, 0.2);">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Em três meses seguindo o plano da Cristiane, eliminei 8kg de forma saudável e sem passar fome. O mais incrível é que ganhei muito mais energia."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">G</div>
+                        <div class="author-info">
+                            <span class="author-name">Gabriel Santos</span>
+                            <span class="author-meta">Paciente de Definição</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="glass-card testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Sempre tive dificuldade para ganhar massa muscular, mesmo treinando pesado. Com a ajuda da Cristiane, consegui ajustar a alimentação e finalmente ver os músculos definirem."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <span class="author-name">Rodrigo Neves</span>
+                            <span class="author-meta">Paciente Esportivo</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento / Form Section -->
+    <section id="agendamento" class="agendamento-section">
+        <div class="container">
+            <div class="agendamento-card glass-card">
+                <div class="agendamento-grid">
+                    <div class="agendamento-info">
+                        <span class="section-kicker">AGENDAMENTO SIMPLIFICADO</span>
+                        <h2 class="section-title">Solicite sua Consulta Nutricional</h2>
+                        <p class="section-desc">Preencha o formulário para iniciar seu atendimento personalizado via WhatsApp. Escolha seu objetivo principal e retornaremos o quanto antes.</p>
+                        
+                        <div class="agendamento-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <span>Atendimento Presencial ou Online</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <span>Plano Alimentar 100% Personalizado</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <span>Suporte Ativo via WhatsApp por 30 Dias</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agendamento-form-wrapper">
+                        <form id="agendamento-form" onsubmit="handleAgendamentoSubmit(event)" class="custom-form">
+                            <div class="form-group">
+                                <label for="form-nome" class="form-label">Nome Completo</label>
+                                <div class="input-with-icon">
+                                    <span class="input-icon">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    </span>
+                                    <input type="text" id="form-nome" class="form-input" placeholder="Digite seu nome" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="form-whatsapp" class="form-label">WhatsApp / Telefone</label>
+                                <div class="input-with-icon">
+                                    <span class="input-icon">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    </span>
+                                    <input type="tel" id="form-whatsapp" class="form-input" placeholder="(11) 99999-9999" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="form-objetivo" class="form-label">Seu Objetivo Principal</label>
+                                <div class="input-with-icon">
+                                    <span class="input-icon">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                    </span>
+                                    <select id="form-objetivo" class="form-select" required>
+                                        <option value="" disabled selected>Selecione um objetivo</option>
+                                        <option value="Emagrecimento & Definição">Emagrecimento & Definição</option>
+                                        <option value="Hipertrofia & Performance">Hipertrofia & Performance Esportiva</option>
+                                        <option value="Saúde Intestinal & Tratamento">Saúde Intestinal & Intolerâncias</option>
+                                        <option value="Nutrição Clínica & Reeducação">Nutrição Clínica & Reeducação Alimentar</option>
+                                        <option value="Consulta Online">Consulta Online</option>
+                                        <option value="Outros Assuntos">Outros Assuntos</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary form-submit-btn" style="width: 100%;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.479 2.016 14.017.99 11.997.99 6.561.99 2.137 5.361 2.133 10.79c-.001 1.67.452 3.3 1.311 4.757l-.955 3.486 3.558-.929zm10.363-7.51c-.26-.13-1.536-.759-1.772-.844-.236-.086-.407-.13-.578.13-.17.26-.66.844-.81 1.013-.15.17-.3.19-.56.06-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.542-1.447-1.802-.152-.26-.016-.4.117-.53.12-.117.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.578-1.393-.791-1.905-.207-.5-.424-.43-.578-.438-.15-.008-.323-.008-.495-.008-.172 0-.452.064-.688.32-.236.256-.902.883-.902 2.15 0 1.267.923 2.49 1.05 2.66.128.17 1.817 2.775 4.402 3.894.615.266 1.094.425 1.468.544.618.196 1.18.168 1.625.101.496-.075 1.536-.627 1.752-1.233.217-.606.217-1.127.151-1.233-.065-.107-.236-.17-.496-.3z"/></svg>
+                                ENVIAR VIA WHATSAPP
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Location -->
+    <section id="faq" class="faq-map-section" style="background-color: var(--bg-alt); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="contact-faq-grid">
+                
+                <!-- FAQ Accordion -->
+                <div class="faq-wrapper">
+                    <span class="section-kicker">TIRE SUAS DÚVIDAS</span>
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    
+                    <div class="faq-list">
+                        
+                        <!-- FAQ 1 -->
+                        <div class="faq-item active">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>Como agendar minha consulta?</h3>
+                                <span class="faq-trigger">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Você pode agendar clicando diretamente nos botões de WhatsApp espalhados pelo site ou ligando em nosso contato. Oferecemos atendimentos presenciais em nosso consultório na Zona Sul de SP e também consultas online (por chamada de vídeo) para todo o Brasil.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>O exame de bioimpedância está incluso na consulta?</h3>
+                                <span class="faq-trigger">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Sim, nas consultas presenciais o exame de bioimpedância computadorizada de alta precisão já está incluso e é realizado no próprio consultório como parte da análise inicial e do acompanhamento.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>Preciso levar exames laboratoriais na primeira consulta?</h3>
+                                <span class="faq-trigger">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Não é obrigatório. Se você possuir exames de sangue recentes (últimos 6 meses), pode trazê-los para análise. Caso contrário, faremos a consulta inicial e, se necessário, farei a solicitação dos exames específicos para o seu objetivo.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>Como funciona o suporte pós-consulta?</h3>
+                                <span class="faq-trigger">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Disponibilizo suporte ativo e acompanhamento via WhatsApp por até 30 dias após a entrega do plano. Você poderá tirar dúvidas sobre marcas de alimentos, substituições de refeições ou relatar a adaptação ao plano alimentar diário.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>Dra. Cristiane atende convênios médicos?</h3>
+                                <span class="faq-trigger">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>O atendimento é particular, porém fornecemos toda a documentação necessária (recibo médico com carimbo e solicitação) para que você possa dar entrada no pedido de reembolso junto ao seu convênio médico.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Contact & Map Card -->
+                <div class="map-card">
+                    <div class="map-iframe-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5126861537233!2d-46.68903332466657!3d-23.657613578733227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce505bb5f97b53%3A0x6e788735398d8cf9!2sR.%20Santo%20Alberto%2C%2061%20-%20Vila%20Sao%20Pedro%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004676-040!5e0!3m2!1spt-BR!2sbr!4v1713500000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="contact-info-list">
+                        <!-- Info Address -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Endereço do Consultório</h4>
+                                <p>Rua Santo Alberto, 61 - Vila São Pedro, São Paulo - SP, 04676-040 (Zona Sul)</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Info Hours -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Horários de Atendimento</h4>
+                                <p>Segunda a Sexta: 08:00h às 20:00h<br>Sábados: 08:00h às 13:00h</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Info Contacts -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Contato Rápido</h4>
+                                <p>WhatsApp: (11) 98618-5312<br>E-mail: contato@nutricionistacristiane.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-brand">
+                    <a href="#" class="logo-container">
+                        <!-- SVG apple outline white asset -->
+                        <img src="assets/offwhite.svg" alt="Nutrimix Logo" width="34" height="34">
+                        <span class="logo-text">NUTRIMIX</span>
+                    </a>
+                    <p>Referência em nutrição integrada, clínica e esportiva personalizada na Zona Sul de São Paulo.</p>
+                    
+                    <!-- Social Media Buttons with Neon Lime Accents -->
+                    <div class="footer-socials">
+                        <a href="https://wa.me/5511986185312?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" class="footer-social-btn" aria-label="WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.479 2.016 14.017.99 11.997.99 6.561.99 2.137 5.361 2.133 10.79c-.001 1.67.452 3.3 1.311 4.757l-.955 3.486 3.558-.929zm10.363-7.51c-.26-.13-1.536-.759-1.772-.844-.236-.086-.407-.13-.578.13-.17.26-.66.844-.81 1.013-.15.17-.3.19-.56.06-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.542-1.447-1.802-.152-.26-.016-.4.117-.53.12-.117.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.578-1.393-.791-1.905-.207-.5-.424-.43-.578-.438-.15-.008-.323-.008-.495-.008-.172 0-.452.064-.688.32-.236.256-.902.883-.902 2.15 0 1.267.923 2.49 1.05 2.66.128.17 1.817 2.775 4.402 3.894.615.266 1.094.425 1.468.544.618.196 1.18.168 1.625.101.496-.075 1.536-.627 1.752-1.233.217-.606.217-1.127.151-1.233-.065-.107-.236-.17-.496-.3z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-btn" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="footer-social-btn" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="#">Início</a>
+                        <a href="#diferenciais">Diferenciais</a>
+                        <a href="#metodo">O Método</a>
+                        <a href="#sobre">Sobre Dra. Cristiane</a>
+                        <a href="#servicos">Áreas de Atuação</a>
+                        <a href="#agendamento">Agendamento</a>
+                        <a href="#faq">Perguntas Frequentes</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Responsabilidade Técnica</h4>
+                    <p class="footer-crn">
+                        Dra. Cristiane de Brito<br>
+                        Nutricionista Clínica e Esportiva Integrativa<br>
+                        <span style="color: var(--accent); font-weight: 700;">CRN-3 / Registro Ativo Regional SP</span><br>
+                        Consultório Nutri Mix Espaço Saúde
+                    </p>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <span>&copy; 2026 Dra. Cristiane de Brito Nutrição. Todos os direitos reservados.</span>
+                <span class="attribution">Desenvolvido por <a href="https://devneto.com.br" target="_blank" class="dev-link">Cloves Neto</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511986185312?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20nutricional." class="whatsapp-float" target="_blank">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.479 2.016 14.017.99 11.997.99 6.561.99 2.137 5.361 2.133 10.79c-.001 1.67.452 3.3 1.311 4.757l-.955 3.486 3.558-.929zm10.363-7.51c-.26-.13-1.536-.759-1.772-.844-.236-.086-.407-.13-.578.13-.17.26-.66.844-.81 1.013-.15.17-.3.19-.56.06-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.542-1.447-1.802-.152-.26-.016-.4.117-.53.12-.117.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.578-1.393-.791-1.905-.207-.5-.424-.43-.578-.438-.15-.008-.323-.008-.495-.008-.172 0-.452.064-.688.32-.236.256-.902.883-.902 2.15 0 1.267.923 2.49 1.05 2.66.128.17 1.817 2.775 4.402 3.894.615.266 1.094.425 1.468.544.618.196 1.18.168 1.625.101.496-.075 1.536-.627 1.752-1.233.217-.606.217-1.127.151-1.233-.065-.107-.236-.17-.496-.3z"/></svg>
+    </a>
+
+    <!-- JavaScript Interactions & Scroll Animations -->
+    <script>
+        // Handle Agendamento Form Submission
+        function handleAgendamentoSubmit(event) {
+            event.preventDefault();
+            const nome = document.getElementById('form-nome').value;
+            const phone = document.getElementById('form-whatsapp').value;
+            const objetivo = document.getElementById('form-objetivo').value;
+
+            const text = `Olá Dra. Cristiane! Meu nome é ${nome} (${phone}) e gostaria de agendar uma consulta focada em ${objetivo}.`;
+            window.open(`https://wa.me/5511986185312?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Toggle Dra Cristiane Bio text collapse
+        function toggleBioText() {
+            const moreContent = document.getElementById('bio-more');
+            const btn = document.getElementById('bio-btn');
+            if (moreContent.style.display === 'none' || !moreContent.style.display) {
+                moreContent.style.display = 'block';
+                btn.innerHTML = 'VER MENOS <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>';
+            } else {
+                moreContent.style.display = 'none';
+                btn.innerHTML = 'VER MAIS <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>';
+            }
+        }
+
+        // Toggle mobile drawer menu
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('overlay');
+            const isOpen = drawer.classList.contains('open');
+            
+            if (isOpen) {
+                drawer.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.classList.remove('drawer-open');
+            } else {
+                drawer.classList.add('open');
+                overlay.classList.add('open');
+                document.body.classList.add('drawer-open');
+            }
+        }
+
+        // Toggle FAQ item collapse
+        function toggleFaq(questionElement) {
+            const item = questionElement.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Toggle clicked item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // JS Count-up and typing animations on Scroll using IntersectionObserver
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // IntersectionObserver for animation triggers
+            const cardsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (!el.classList.contains('animated')) {
+                            el.classList.add('animated');
+                            
+                            // Trigger card-specific visual animations
+                            if (el.id === 'card-emagrecimento') {
+                                animateWeightLoss(el);
+                            } else if (el.id === 'card-hipertrofia') {
+                                animateHypertrophy(el);
+                            } else if (el.id === 'card-vitalidade') {
+                                animateVitality(el);
+                            }
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Register cards to observer
+            const cards = ['card-emagrecimento', 'card-hipertrofia', 'card-vitalidade'];
+            cards.forEach(id => {
+                const target = document.getElementById(id);
+                if (target) cardsObserver.observe(target);
+            });
+
+            // Initialize JS Sliding Carousels with Auto-Play for tablet and mobile
+            function initCarousel(containerId, trackClass, cardClass, dotsId) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                const track = container.querySelector('.' + trackClass);
+                const cards = track.querySelectorAll('.' + cardClass);
+                const dotsContainer = document.getElementById(dotsId);
+                if (!dotsContainer) return;
+                
+                let currentIndex = 0;
+                const totalCards = cards.length;
+                
+                // Create dots
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalCards; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot' + (i === 0 ? ' active' : '');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                        resetAutoPlay();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                
+                const dots = dotsContainer.querySelectorAll('.dot');
+                
+                function goToSlide(index) {
+                    currentIndex = (index + totalCards) % totalCards;
+                    const slideWidth = container.clientWidth;
+                    track.style.transform = `translate3d(${-currentIndex * slideWidth}px, 0, 0)`;
+                    
+                    dots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === currentIndex);
+                    });
+                }
+
+                // Handle screen resize
+                window.addEventListener('resize', () => {
+                    goToSlide(currentIndex);
+                });
+
+                // Automatic infinite sliding loop every 3.5 seconds
+                let autoPlayTimer = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 3500);
+
+                function resetAutoPlay() {
+                    clearInterval(autoPlayTimer);
+                    autoPlayTimer = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, 3500);
+                }
+                
+                // Touch Swipe gesture support
+                let startX = 0;
+                let isDragging = false;
+                
+                track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                    clearInterval(autoPlayTimer);
+                }, { passive: true });
+                
+                track.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    const diff = e.touches[0].clientX - startX;
+                    if (diff < -50) {
+                        goToSlide(currentIndex + 1);
+                        isDragging = false;
+                    } else if (diff > 50) {
+                        goToSlide(currentIndex - 1);
+                        isDragging = false;
+                    }
+                }, { passive: true });
+                
+                track.addEventListener('touchend', () => {
+                    isDragging = false;
+                    resetAutoPlay();
+                });
+            }
+
+            // Init mobile/tablet carousels on DOMContentLoaded
+            initCarousel('pillars-carousel', 'pillars-grid', 'pillar-card', 'pillars-dots');
+            initCarousel('services-carousel', 'services-grid', 'service-card', 'services-dots');
+
+            // 1. Emagrecimento: Animate Bars (Handled natively via CSS transitions on scaleY)
+            function animateWeightLoss(card) {
+                // Triggered via scaleY in CSS
+            }
+
+            // 2. Hipertrofia: Circular Progress + Count-up Text
+            function animateHypertrophy(card) {
+                // Circle Progress filling
+                const circle = card.querySelector('.circle-progress');
+                const targetOffset = circle.getAttribute('data-offset');
+                circle.style.strokeDashoffset = targetOffset;
+
+                // Percent Text count-up (0% to 70%)
+                const pctText = document.getElementById('circle-pct');
+                let curPct = 0;
+                const pctInterval = setInterval(() => {
+                    if (curPct >= 70) {
+                        clearInterval(pctInterval);
+                    } else {
+                        curPct++;
+                        pctText.textContent = `${curPct}%`;
+                    }
+                }, 20);
+
+                // Muscle mass number count-up (+0.0kg to +3.8kg)
+                const numText = document.getElementById('muscle-num');
+                let curNum = 0.0;
+                const numInterval = setInterval(() => {
+                    if (curNum >= 3.8) {
+                        clearInterval(numInterval);
+                        numText.textContent = '+3.8kg';
+                    } else {
+                        curNum += 0.1;
+                        numText.textContent = `+${curNum.toFixed(1)}kg`;
+                    }
+                }, 35);
+            }
+
+            // 3. Vitalidade: Slide-in list rows + Typewriter for final metrics
+            function animateVitality(card) {
+                const rows = card.querySelectorAll('.stats-ui-row');
+                rows.forEach((row, i) => {
+                    setTimeout(() => {
+                        row.classList.add('animated');
+                        // Trigger typewriter effect for this row's value
+                        const valSpan = row.querySelector('.stats-val');
+                        const rawText = valSpan.getAttribute('data-type');
+                        typewriter(valSpan, rawText);
+                    }, i * 350);
+                });
+            }
+
+            // Simple typewriter utility
+            function typewriter(element, text) {
+                let index = 0;
+                element.textContent = '';
+                const typeTimer = setInterval(() => {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                    } else {
+                        clearInterval(typeTimer);
+                    }
+                }, 60);
+            }
+        });
+    </script>
+</body>
+</html>

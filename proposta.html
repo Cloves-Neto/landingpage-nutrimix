@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial de Redesign — Dra. Cristiane de Brito</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        :root {
+            --bg-page: #f4f7f6;
+            --paper-light: #ffffff;
+            --primary-green: #0a4c2c;
+            --accent-lime: #c6ff00;
+            --accent-lime-hover: #b2e600;
+            --lime-badge-bg: rgba(198, 255, 0, 0.45);
+            --text-dark: #0a2417;
+            --text-muted: #4e6356;
+            --border-color: #e1e8e3;
+            --card-bg: #f9fbf9;
+            --font-head: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-full: 99px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-page); 
+            color: var(--text-dark); 
+            padding: 50px 20px; 
+            line-height: 1.6; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        .container { 
+            max-width: 920px; 
+            width: 100%; 
+            margin: 0 auto; 
+            background: var(--paper-light); 
+            border: 1px solid var(--border-color); 
+            border-radius: var(--radius-lg); 
+            padding: 56px 48px; 
+            box-shadow: 0 20px 50px rgba(10, 76, 44, 0.08); 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        /* Subtle Ambient Glow */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 300px;
+            height: 300px;
+            background: rgba(198, 255, 0, 0.25);
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-brand { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 32px; 
+            padding-bottom: 24px; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .badge-proposal { 
+            background: var(--lime-badge-bg); 
+            color: var(--primary-green); 
+            padding: 10px 24px; 
+            border-radius: var(--radius-full); 
+            font-weight: 800; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.12em; 
+            border: 1px solid #b2e600; 
+            text-align: center; 
+            box-shadow: 0 2px 10px rgba(198, 255, 0, 0.3);
+        }
+
+        h1 { 
+            font-family: var(--font-head); 
+            font-size: clamp(2rem, 4vw, 2.7rem); 
+            color: var(--primary-green); 
+            font-weight: 800; 
+            margin-bottom: 16px; 
+            line-height: 1.25; 
+            text-align: center; 
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: var(--primary-green);
+            background: linear-gradient(120deg, rgba(198,255,0,0.6) 0%, rgba(198,255,0,0.3) 100%);
+            padding: 2px 10px;
+            border-radius: 8px;
+        }
+
+        p.intro { 
+            color: var(--text-muted); 
+            font-size: 1.05rem; 
+            margin-bottom: 40px; 
+            font-weight: 500; 
+            line-height: 1.7; 
+            max-width: 780px; 
+            text-align: center; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+
+        .deliverables-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 24px; 
+            margin-bottom: 40px; 
+        }
+
+        .deliv-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            padding: 28px; 
+            border-radius: var(--radius-md); 
+            transition: var(--transition); 
+        }
+
+        .deliv-card:hover { 
+            border-color: var(--primary-green); 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 25px rgba(10, 76, 44, 0.08);
+            background: #ffffff;
+        }
+
+        .deliv-card .icon { 
+            font-size: 1.8rem; 
+            color: var(--primary-green); 
+            margin-bottom: 16px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: var(--accent-lime);
+            border: 1px solid #b2e600;
+            box-shadow: 0 4px 12px rgba(198, 255, 0, 0.4);
+        }
+
+        .deliv-card h3 { 
+            font-family: var(--font-head); 
+            font-size: 1.18rem; 
+            color: var(--primary-green); 
+            margin-bottom: 10px; 
+            font-weight: 700; 
+            letter-spacing: -0.01em;
+        }
+
+        .deliv-card p { 
+            font-size: 0.9rem; 
+            color: var(--text-muted); 
+            line-height: 1.6; 
+            font-weight: 500;
+        }
+
+        .investment-box { 
+            background: rgba(10, 76, 44, 0.04); 
+            border: 1px solid rgba(10, 76, 44, 0.15); 
+            border-radius: var(--radius-md); 
+            padding: 28px 32px; 
+            margin-bottom: 40px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 20px; 
+        }
+
+        .inv-info h4 { 
+            font-family: var(--font-head); 
+            font-size: 1.25rem; 
+            color: var(--primary-green); 
+            margin-bottom: 4px; 
+            font-weight: 700;
+        }
+
+        .inv-info p { 
+            font-size: 0.9rem; 
+            color: var(--text-muted); 
+            font-weight: 500;
+        }
+
+        .inv-status-note { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            color: var(--primary-green); 
+            font-size: 0.9rem; 
+            font-weight: 800; 
+            background: rgba(198, 255, 0, 0.4); 
+            padding: 8px 16px; 
+            border-radius: var(--radius-full);
+            border: 1px solid #b2e600;
+        }
+
+        .inv-status-note ion-icon { 
+            font-size: 1.3rem; 
+        }
+
+        .proposal-actions { 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+            justify-content: center; 
+            margin-top: 20px; 
+        }
+
+        .btn-proposal-secondary { 
+            flex: 1; 
+            text-align: center; 
+            background: #ffffff; 
+            color: var(--primary-green); 
+            border: 2px solid var(--primary-green); 
+            padding: 18px 28px; 
+            border-radius: var(--radius-full); 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            transition: var(--transition); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+
+        .btn-proposal-secondary:hover { 
+            background: rgba(10, 76, 44, 0.05);
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 15px rgba(10, 76, 44, 0.1);
+        }
+
+        .btn-proposal-primary { 
+            flex: 1; 
+            text-align: center; 
+            background: var(--accent-lime); 
+            color: var(--primary-green); 
+            border: 2px solid #b2e600; 
+            padding: 18px 28px; 
+            border-radius: var(--radius-full); 
+            cursor: pointer; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            transition: var(--transition); 
+            box-shadow: 0 6px 20px rgba(198, 255, 0, 0.45); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+
+        .btn-proposal-primary:hover { 
+            background: var(--accent-lime-hover); 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 25px rgba(198, 255, 0, 0.6); 
+        }
+
+        /* MODAL STYLING (LIGHT MODE) */
+        .modal-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background: rgba(10, 36, 23, 0.65); 
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10000; 
+            opacity: 0; 
+            pointer-events: none; 
+            transition: var(--transition); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+
+        .modal-overlay.open { 
+            opacity: 1; 
+            pointer-events: auto; 
+        }
+
+        .modal-card { 
+            background: #ffffff; 
+            border: 2px solid var(--primary-green); 
+            border-radius: var(--radius-lg); 
+            padding: 40px; 
+            max-width: 520px; 
+            width: 100%; 
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25); 
+            transform: translateY(20px); 
+            transition: var(--transition); 
+            position: relative; 
+        }
+
+        .modal-overlay.open .modal-card { 
+            transform: translateY(0); 
+        }
+
+        .modal-close { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
+            background: rgba(10, 76, 44, 0.06); 
+            border: none; 
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: var(--primary-green); 
+            font-size: 1.4rem; 
+            cursor: pointer; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition); 
+        }
+
+        .modal-close:hover { 
+            background: var(--primary-green);
+            color: #ffffff; 
+        }
+
+        .modal-card h2 { 
+            font-family: var(--font-head); 
+            font-size: 1.75rem; 
+            color: var(--primary-green); 
+            margin-bottom: 8px; 
+            font-weight: 800;
+        }
+
+        .modal-card p { 
+            font-size: 0.92rem; 
+            color: var(--text-muted); 
+            margin-bottom: 24px; 
+            font-weight: 500;
+        }
+
+        .form-group { margin-bottom: 18px; }
+        
+        .form-group label { 
+            display: block; 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.08em; 
+            color: var(--primary-green); 
+            margin-bottom: 8px; 
+        }
+
+        .form-input { 
+            width: 100%; 
+            padding: 14px 18px; 
+            border-radius: var(--radius-md); 
+            border: 1.5px solid var(--border-color); 
+            background: #ffffff; 
+            color: var(--text-dark); 
+            font-family: var(--font-body); 
+            font-size: 0.95rem; 
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus { 
+            outline: none; 
+            border-color: var(--primary-green); 
+            box-shadow: 0 0 0 4px rgba(10, 76, 44, 0.08);
+        }
+
+        textarea.form-input { 
+            resize: none !important; 
+            min-height: 95px; 
+            line-height: 1.5; 
+        }
+
+        .btn-modal-submit { 
+            width: 100%; 
+            background: var(--accent-lime); 
+            color: var(--primary-green); 
+            border: 2px solid #b2e600; 
+            padding: 16px; 
+            border-radius: var(--radius-full); 
+            font-weight: 800; 
+            font-size: 0.95rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.08em; 
+            cursor: pointer; 
+            transition: var(--transition); 
+            margin-top: 10px; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            box-shadow: 0 4px 15px rgba(198, 255, 0, 0.4);
+        }
+
+        .btn-modal-submit:hover { 
+            background: var(--accent-lime-hover); 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 22px rgba(198, 255, 0, 0.55);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 32px 20px; }
+            .deliverables-grid { grid-template-columns: 1fr; }
+            .investment-box { flex-direction: column; text-align: center; }
+            .proposal-actions { flex-direction: column; }
+            .btn-proposal-secondary, .btn-proposal-primary { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-brand">
+            <span class="badge-proposal">Proposta Comercial de Redesign — NUTRIMIX</span>
+        </div>
+
+        <h1>Nova Experiência Digital & <span>Posicionamento Premium</span></h1>
+        <p class="intro">Apresentamos o projeto oficial de redesign para o consultório da <strong>Dra. Cristiane de Brito</strong>. Transformamos sua presença digital em uma plataforma <strong>moderna, elegante, 100% responsiva para celulares e focada na conversão de novos pacientes</strong> na Zona Sul de São Paulo.</p>
+
+        <div class="deliverables-grid">
+            <div class="deliv-card">
+                <div class="icon"><ion-icon name="sparkles-outline"></ion-icon></div>
+                <h3>Design Autoral & Estética Atual (2026)</h3>
+                <p>Layout exclusivo e refinado nos padrões mais recentes de web design, valorizando sua autoridade em Nutrição Clínica e Esportiva Integrativa.</p>
+            </div>
+            <div class="deliv-card">
+                <div class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+                <h3>Navegação 100% Responsiva no Mobile</h3>
+                <p>Experiência perfeita em qualquer smartphone, com carrosséis deslizantes automáticos por toque e menu lateral tipo gaveta otimizado.</p>
+            </div>
+            <div class="deliv-card">
+                <div class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></div>
+                <h3>Captação Inteligente via WhatsApp</h3>
+                <p>Formulário interativo com seleção de objetivo (emagrecimento, hipertrofia, saúde intestinal) e botões diretos para agendamento rápido.</p>
+            </div>
+            <div class="deliv-card">
+                <div class="icon"><ion-icon name="rocket-outline"></ion-icon></div>
+                <h3>Alta Performance & Prontidão para Anúncios</h3>
+                <p>Carregamento ultrarrápido, estrutura preparada para SEO local na Zona Sul de SP e ideal para campanhas de anúncios no Google Ads.</p>
+            </div>
+        </div>
+
+        <div class="investment-box">
+            <div class="inv-info">
+                <h4>Projeto de Redesign & Publicação Web</h4>
+                <p>Inclui desenvolvimento completo, otimização responsiva para celulares e publicação imediata no ar.</p>
+            </div>
+            <div class="inv-status-note">
+                <ion-icon name="checkmark-done-circle-outline"></ion-icon>
+                <span>Status: Pronto para publicação imediata</span>
+            </div>
+        </div>
+
+        <div class="proposal-actions">
+            <a href="index.html" class="btn-proposal-secondary">
+                <ion-icon name="eye-outline"></ion-icon>
+                Ver Projeto
+            </a>
+            <button class="btn-proposal-primary" onclick="openAcceptModal()">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+                Aceitar Proposta
+            </button>
+        </div>
+    </div>
+
+    <!-- ACCEPTANCE MODAL -->
+    <div class="modal-overlay" id="acceptModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeAcceptModal()" aria-label="Fechar">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <h2>Aprovar e Publicar Site</h2>
+            <p>Preencha os dados abaixo para confirmar o aceite da proposta e iniciar a publicação oficial do seu novo site no ar.</p>
+
+            <form onsubmit="sendAcceptanceWhatsApp(event)">
+                <div class="form-group">
+                    <label for="client-name">Seu Nome Completo</label>
+                    <input type="text" id="client-name" class="form-input" value="Dra. Cristiane de Brito" placeholder="Dra. Cristiane de Brito" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-email">E-mail de Contato</label>
+                    <input type="email" id="client-email" class="form-input" value="contato@nutricionistacristiane.com.br" placeholder="contato@nutricionistacristiane.com.br" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-notes">Observações / Preferências para publicação</label>
+                    <textarea id="client-notes" class="form-input" rows="3" placeholder="Digite aqui suas observações, preferências de início ou dúvidas..."></textarea>
+                </div>
+                <button type="submit" class="btn-modal-submit">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    Confirmar Aceite via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openAcceptModal() {
+            document.getElementById('acceptModal').classList.add('open');
+        }
+
+        function closeAcceptModal() {
+            document.getElementById('acceptModal').classList.remove('open');
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target === document.getElementById('acceptModal')) {
+                closeAcceptModal();
+            }
+        }
+
+        function sendAcceptanceWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const email = document.getElementById('client-email').value;
+            const notes = document.getElementById('client-notes').value;
+
+            let message = `Olá Cloves! Me chamo ${name} e ACEITO a proposta comercial para a publicação do meu novo site redesenhado!\n\n`;
+            message += `📌 *E-mail:* ${email}\n`;
+            if (notes.trim()) {
+                message += `📝 *Observações/Previsão:* ${notes}\n`;
+            }
+            message += `\nPodemos dar sequência ao lançamento oficial do site!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5511920992904?text=${encodedMessage}`, '_blank');
+            closeAcceptModal();
+        }
+    </script>
+</body>
+</html>
